@@ -21,16 +21,17 @@ A premium, feature-rich note-taking application designed for focus and organizat
 
 ## Project Structure
 ```text
-src/
-├── components/       # Reusable UI components (Navbar, NoteCard, Editor, etc.)
-├── assets/           # Static assets like images and icons
-├── utils/
-│   ├── helpers.js    # Global utility functions (ID gen, sorting, filtering)
-│   └── useLocalStorage.js # Custom hook for persistent state
-├── App.jsx           # Main application logic and state management
-├── App.css           # Core styling and design system tokens
-├── index.css         # Reset and global base styles
-└── main.jsx          # Application entry point
+.
+├── src/              # Source code of the application
+│   ├── components/   # Reusable UI components
+│   ├── assets/       # Static assets like images and icons
+│   └── utils/        # Global utility functions and custom hooks
+├── index.html        # Entry HTML file
+├── package.json      # Node.js project dependencies and scripts
+├── vite.config.js    # Vite configuration
+├── vercel.json       # Deployment configuration for Vercel
+├── .gitignore        # Files ignored by Git
+└── README.md         # Project documentation
 ```
 
 ## Getting Started

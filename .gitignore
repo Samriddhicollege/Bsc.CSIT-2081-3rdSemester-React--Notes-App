@@ -41,9 +41,3 @@ Thumbs.db
 
 # Cache
 .cache/
-
-# Subdirectory Specifics
-notenest/node_modules/
-notenest/.env
-notenest/.env.local
-notenest/dist/
