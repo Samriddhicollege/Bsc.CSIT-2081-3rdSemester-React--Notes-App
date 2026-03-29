@@ -23,6 +23,7 @@ function App() {
   const [isSetupOpen, setIsSetupOpen] = useState(false)
   const [isEditorOpen, setIsEditorOpen] = useState(false)
   const [editingNote, setEditingNote] = useState(null)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   // ── Weather state ─────────────────────────────────────────────────
   const [weather, setWeather] = useState(null)
@@ -155,6 +156,10 @@ function App() {
     setIsEditorOpen(false)
   }
 
+  function toggleSidebar() {
+    setSidebarOpen(!sidebarOpen)
+  }
+
   // ── Derive displayed notes ────────────────────────────────────────
   const filteredNotes = filterNotes(notes, activeCategory, debouncedQuery)
   const displayedNotes = sortNotes(filteredNotes, sortBy)
@@ -175,13 +180,19 @@ function App() {
         weatherError={weatherError}
         onNewNote={handleOpenCreate}
         totalNotes={notes.length}
+        onToggleSidebar={toggleSidebar}
       />
 
       <div className="app-body">
         <Sidebar
           activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
+          onCategoryChange={(cat) => {
+            setActiveCategory(cat)
+            setSidebarOpen(false) // Close drawer on selection
+          }}
           getCategoryCount={getCategoryCount}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
 
         <main className="main-content">

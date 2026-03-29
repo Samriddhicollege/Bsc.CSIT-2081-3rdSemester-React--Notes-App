@@ -36,10 +36,17 @@ function getWeatherIcon(code) {
   return WEATHER_ICONS.rainy
 }
 
-function Navbar({ darkMode, onToggleDark, weather, weatherLoading, weatherError, onNewNote }) {
+function Navbar({ darkMode, onToggleDark, weather, weatherLoading, weatherError, onNewNote, onToggleSidebar }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
+        <button className="menu-btn" onClick={onToggleSidebar} aria-label="Open sidebar">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <line x1="4" y1="6" x2="16" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="4" y1="14" x2="16" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </button>
         <div className="nav-logo">
           <div className="nav-logo-icon">
             <img src={logo} alt="NoteNest Logo" width="16" height="16" />
@@ -86,12 +93,12 @@ function Navbar({ darkMode, onToggleDark, weather, weatherLoading, weatherError,
         </button>
 
         {/* New Note Button */}
-        <button className="new-note-btn" onClick={onNewNote}>
+        <button className="new-note-btn" onClick={onNewNote} aria-label="New note">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <line x1="6" y1="1" x2="6" y2="11" stroke="white" strokeWidth="2" strokeLinecap="round"/>
             <line x1="1" y1="6" x2="11" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           </svg>
-          New Note
+          <span className="btn-text">New Note</span>
         </button>
       </div>
     </nav>

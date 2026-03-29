@@ -15,7 +15,26 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+}
+
+.menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.menu-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
 }
 
 .nav-logo {
@@ -116,4 +135,43 @@
 
 .new-note-btn:active {
   transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .nav-logo-text {
+    display: none;
+  }
+
+  .weather-widget {
+    padding: 5px 8px;
+    min-width: unset;
+  }
+
+  .weather-temp {
+    display: none;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .new-note-btn {
+    padding: 0;
+    width: 36px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-widget {
+    display: none;
+  }
 }

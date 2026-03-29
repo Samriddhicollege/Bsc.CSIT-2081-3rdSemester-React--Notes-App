@@ -317,3 +317,52 @@
   background: #1f2937;
   border-color: #374151;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .editor-container {
+    padding: 0 10px;
+  }
+
+  .editor-header {
+    height: 60px;
+  }
+
+  .editor-title {
+    font-size: 16px;
+  }
+
+  .btn-save-main {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .editor-toolbar {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+
+  .notepad-paper {
+    background-image: 
+      linear-gradient(to right, transparent 39px, #fca5a5 39px, #fca5a5 41px, transparent 41px),
+      linear-gradient(#e5e7eb 1px, transparent 1px);
+    margin-bottom: 20px;
+  }
+
+  .notepad-content {
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  [data-theme='dark'] .notepad-paper {
+    background-image: 
+      linear-gradient(to right, transparent 39px, rgba(252, 165, 165, 0.3) 39px, rgba(252, 165, 165, 0.3) 41px, transparent 41px),
+      linear-gradient(#374151 1px, transparent 1px);
+  }
+}

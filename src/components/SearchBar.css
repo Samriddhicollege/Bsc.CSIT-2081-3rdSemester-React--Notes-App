@@ -93,3 +93,14 @@
   color: var(--text-primary);
 }
 
+@media (max-width: 600px) {
+  .searchbar-row {
+    flex-wrap: wrap;
+  }
+  
+  .sort-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
